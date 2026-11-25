@@ -1,5 +1,11 @@
 <script lang="ts">
 
+
+
+  export const prerender = true;
+
+
+
   let menuOpen = $state(false);
 
   let activeFilter = $state('All');
@@ -12,7 +18,7 @@
 
   const contact = {
 
-    email: 'azizzahnur01@gmail.com',
+    email: 'azzizahnur01@gmail.com',
 
     phone: '+6289506886278',
 
@@ -234,7 +240,7 @@
 
       number: '11',
 
-      title: 'SmartSchool',
+      title: 'SmartSkill',
 
       category: 'Mobile App',
 
@@ -242,7 +248,7 @@
 
         'An educational application concept designed to support learning activities and interactions within a school environment.',
 
-      image: '/images/smartschool.png',
+      image: '/images/SmartSkill.png',
 
       year: '2025'
 
@@ -334,15 +340,17 @@
 
   <nav class:open={menuOpen} aria-label="Main navigation">
 
+    <a href="#experience" onclick={() => (menuOpen = false)}>Experience</a>
+
     <a href="#work" onclick={() => (menuOpen = false)}>Work</a>
 
     <a href="#about" onclick={() => (menuOpen = false)}>About</a>
 
     <a href="#contact" onclick={() => (menuOpen = false)}>Contact</a>
 
-    <a href={emailLink} class="nav-cta">Let's Talk ↗</a>
-
   </nav>
+
+      <a href={emailLink} class="nav-cta">Let's Talk ↗</a>
 
 </header>
 
@@ -467,6 +475,62 @@
   </section>
 
 
+
+  <!-- WORK EXPERIENCE -->
+  <section class="experience-section" id="experience">
+    <div class="section-heading experience-heading">
+      <div>
+        <p class="eyebrow">WHERE I’VE CONTRIBUTED</p>
+        <h2>Work <span>experience.</span></h2>
+      </div>
+      <p class="section-side-note">
+        Turning user needs into thoughtful, functional digital experiences.
+      </p>
+    </div>
+
+    <div class="experience-list">
+      <article class="experience-card">
+        <div class="experience-timeline">
+          <span class="experience-dot current"></span>
+          <span class="experience-line"></span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-meta">
+            <span>JUNE 2026 — PRESENT</span>
+            <span class="experience-type">INTERNSHIP</span>
+          </div>
+          <h3>UI/UX Designer Intern</h3>
+          <p class="experience-company">ADS Digital Partner Indonesia</p>
+          <ul>
+            <li>Conduct user research and analyze user needs to identify product opportunities.</li>
+            <li>Create user flows, wireframes, and interactive prototypes using Figma.</li>
+            <li>Collaborate with developers and stakeholders throughout the digital product development process.</li>
+            <li>Contribute to a scalable design system and use AI tools to support research, ideation, and design workflows.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-timeline">
+          <span class="experience-dot"></span>
+        </div>
+        <div class="experience-content">
+          <div class="experience-meta">
+            <span>APRIL 2025 — APRIL 2026</span>
+            <span class="experience-type">CONTRACT</span>
+          </div>
+          <h3>UI/UX Designer</h3>
+          <p class="experience-company">PT Sans Athan Group</p>
+          <ul>
+            <li>Designed user interfaces for the Dishub AI Detection Dashboard.</li>
+            <li>Created wireframes, user flows, and prototypes using Figma, and conducted user research to improve UX.</li>
+            <li>Collaborated with developers and AI engineers to support accurate design implementation.</li>
+            <li>Built a design system and component asset library, then refined designs based on feedback.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- PROJECTS -->
 
@@ -638,6 +702,10 @@
       <span>05 / USER FLOWS</span>
 
       <span>06 / INTERACTION DESIGN</span>
+
+      <span>07 / HTML</span>
+
+      <span>08 / CSS</span>
 
     </div>
 
@@ -1438,6 +1506,109 @@
   }
 
 
+
+  /* WORK EXPERIENCE */
+  .experience-section {
+    padding: 95px 8%;
+    background: #f4f3ef;
+  }
+
+  .experience-heading {
+    margin-bottom: 45px;
+  }
+
+  .experience-list {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+
+  .experience-card {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 22px;
+    padding-bottom: 42px;
+  }
+
+  .experience-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  .experience-dot {
+    width: 11px;
+    height: 11px;
+    margin-top: 5px;
+    flex: 0 0 auto;
+    border: 2px solid #77766f;
+    border-radius: 50%;
+    background: #f4f3ef;
+  }
+
+  .experience-dot.current {
+    border-color: #171715;
+    background: #171715;
+    box-shadow: 0 0 0 5px #e2e1db;
+  }
+
+  .experience-line {
+    width: 1px;
+    flex: 1;
+    min-height: 30px;
+    margin-top: 12px;
+    background: #d8d7d1;
+  }
+
+  .experience-content {
+    padding: 0 0 30px;
+    border-bottom: 1px solid #d8d7d1;
+  }
+
+  .experience-card:last-child .experience-content {
+    border-bottom: 0;
+  }
+
+  .experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    color: #77766f;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .experience-type {
+    padding: 6px 9px;
+    border: 1px solid #d8d7d1;
+    border-radius: 20px;
+    font-size: 9px;
+  }
+
+  .experience-content h3 {
+    margin: 15px 0 5px;
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+  }
+
+  .experience-company {
+    margin: 0 0 18px;
+    color: #696861;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .experience-content ul {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding-left: 18px;
+    color: #696861;
+    font-size: 12px;
+    line-height: 1.8;
+  }
 
   /* PROJECTS */
 
